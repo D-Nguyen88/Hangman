@@ -77,6 +77,13 @@ public class Hangman extends javax.swing.JFrame {
         }
         output.setText(b);
     }
+    
+     public void reset(){  //reset for the menu item new game  Dnguyen changes
+        counter = 0;
+        displayBlanks(word);
+        draw();
+        repaint();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -605,6 +612,17 @@ public class Hangman extends javax.swing.JFrame {
         // TODO add your handling code here:
         verify(word,"z");
     }//GEN-LAST:event_buttonZActionPerformed
+    
+     private void menuNewGameActionPerformed(java.awt.event.ActionEvent evt) {         //DNguyen Changes                                   
+        // TODO add your handling code here:
+        reset(); // reset method up top to reset state of game - int counter, displayBlanks(words);
+    }                                           
+
+    private void menuCloseActionPerformed(java.awt.event.ActionEvent evt) {           //DNguyen Changes                               
+        // TODO add your handling code here:
+        System.exit(0); // exit game if player click exit in menu bar or hit ESC
+    }
+    
 
     /**
      * @param args the command line arguments
